@@ -3,7 +3,7 @@ package com.alek;
 public class StockItem implements Comparable<StockItem>{
     private final String name;
     private double price;
-    private int quantityStock; // cn be initialized later
+    private int quantityStock; // can be initialized later  ilosc zbiorów??
 
     public StockItem(String name, double price) {
         this.name = name;
@@ -36,7 +36,7 @@ public class StockItem implements Comparable<StockItem>{
     }
 
     public void adjustStock(int quantity) {
-        int newQuantity = this.quantityStock + quantity;
+        int newQuantity = this.quantityStock + quantity; //so quantity can be negative, because we can take it or add some
         if(newQuantity >= 0) {
             this.quantityStock = newQuantity;
         }
@@ -70,7 +70,7 @@ public class StockItem implements Comparable<StockItem>{
         }
 
         if(o != null) {
-            return this.name.compareTo(o.getName());
+            return this.name.compareTo(o.getName()); // we are comparing by name
         }
 
         throw new NullPointerException();
